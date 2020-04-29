@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset = "UFT-8">
+        
+        <title>Quadrados</title>
+    </head>
+    <body>
+        
+        <div id = "app">
+            <div class="box"></div>
+            <button onclick ="quadradonovo()">Clicar para gerar quadrados </button> 
+                        
+        </div>
+                        
+        <script>
+           var quadrado = 0; 
+           function quadradonovo(){
+    
+               var box = document.createElement('div');
+               box.style.width = 1500;
+               box.style.height = 100;
+               box.style.backgroundColor = 'rgb(255, 0, 0)';
+               box.classList.add('box');
+               box.id = quadrado++;
+               box.addEventListener("mouseover" , function(event){
+                   var idquadrado = event.target.id;
+                   var quadrado = document.getElementById(idquadrado)
+                   let  r = Math.floor(Math.random()*255),
+                        b = Math.floor(Math.random()*255),
+                        g = Math.floor(Math.random()*255);
+                   quadrado.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
+
+           })
+           document.body.appendChild(box);
+
+            }
+            
+        </script>
+    
+    </body>
+</html>

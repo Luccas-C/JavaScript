@@ -1,0 +1,42 @@
+
+<html lang ="pt">
+    <head>
+        <meta charset = "UFT-8">
+        <meta name = "viewport" content = "width=device-width , initial-scale=1.0">
+        <title>Numeros coloridos</title>
+    </head>
+    <body>
+        
+        <div id = 'conteudo'>
+            <center> <button id="botao" onclick="mostra()">Clica gerar numeros coloridos </button> </center>
+           
+        </div>
+                        
+        <script>
+            setInterval("document.location=document.location" , 3000); //esse timeout atualiza a pagina sozinho
+            botao = document.getElementById('botao');
+            function mostra(){
+                conteudo.textContent = "";
+                for(i = 0;i < 300;i++){
+                    let conteudoantigo = conteudo.textContent;
+                    let conteudonovo = i + ', ';
+                    conteudo.textContent = conteudoantigo + conteudonovo;  
+                    
+                    let r = Math.floor(Math.random()*255),
+                        b = Math.floor(Math.random()*255),
+                        g = Math.floor(Math.random()*255),
+                        a = Math.floor(Math.random()*255),
+                        d = Math.floor(Math.random()*255), 
+                        c = Math.floor(Math.random()*255);
+                    conteudo.style.color = 'rgb('+r+','+g+','+b+')'; 
+                    
+                    document.body.style.backgroundColor = 'rgb('+a+','+d+','+c+')';
+            }    
+
+                
+                
+            }
+        </script>
+    
+    </body>
+</html>
